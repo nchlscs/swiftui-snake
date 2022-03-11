@@ -1,6 +1,8 @@
 # SnakeSwiftUI
 
-A classic snake game in pure SwiftUI
+A classic snake game written in SwiftUI
+
+![Preview](https://raw.githubusercontent.com/nchlscs/snake-swiftui/main/Preview.png)
 
 ## Installation
 
