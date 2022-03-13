@@ -1,5 +1,4 @@
 import SwiftUI
-import Combine
 
 @main
 struct SnakeGameApp: App {
@@ -22,11 +21,13 @@ struct GameView: View {
     @State private var gameState = GameState.paused
     @State private var direction = Direction.down
     @State private var foodPosition = CGPoint.zero
+    @State private var time = TimeInterval.zero
+    
     @State private var snake: Snake
     @State private var frame: CGRect
+    @State private var speed: TimeInterval
+    @State private var timer: Timer?
 
-    private let timer: AnyPublisher<Date, Never>
-    
     init(configuration: Configuration) {
         _snake = State(initialValue: .init(
             size: configuration.snakeSize
@@ -35,14 +36,7 @@ struct GameView: View {
             origin: .zero, 
             size: configuration.canvasSize
         )
-        timer = Timer
-            .publish(
-                every: configuration.speed,
-                on: .main,
-                in: .common
-            )
-            .autoconnect()
-            .eraseToAnyPublisher()
+        speed = configuration.speed
     }
     
     var body: some View {
@@ -58,7 +52,7 @@ struct GameView: View {
                     .position(snake.body[index])
                     .offset(x: snake.size / 2, y: snake.size / 2)
             }
-            Rectangle()
+            Circle()
                 .fill(Color.red)
                 .frame(width: snake.size, height: snake.size)
                 .position(foodPosition)
@@ -74,7 +68,7 @@ struct GameView: View {
         .onAppear(perform: reset)
         .onTapGesture(perform: switchState)
         .gesture(DragGesture().onEnded(updateDirection))
-        .onReceive(timer) { _ in self.run() }
+        .onChange(of: time) { _ in self.run() }
         .frame(width: frame.width, height: frame.height)
     }
     
@@ -105,6 +99,12 @@ struct GameView: View {
         } else if !left && !top {
             direction = Bool.random() ? .up : .right
         }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(
+            withTimeInterval: speed, 
+            repeats: true,
+            block: { time += $0.timeInterval }
+        )
     }
     
     private func randomPosition() -> CGPoint {
