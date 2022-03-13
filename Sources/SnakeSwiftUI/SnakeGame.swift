@@ -27,11 +27,11 @@ struct GameView: View {
     @State private var frame: CGRect
     @State private var speed: TimeInterval
     @State private var timer: Timer?
-
+    
     init(configuration: Configuration) {
-        _snake = State(initialValue: .init(
+        snake = .init(
             size: configuration.snakeSize
-        ))
+        )
         frame = .init(
             origin: .zero, 
             size: configuration.canvasSize
@@ -85,7 +85,6 @@ struct GameView: View {
     }
     
     private func reset() {
-        snake.reset()
         foodPosition = randomPosition()
         snake.place(to: randomPosition())
         let left = snake.head.x < frame.width / 2
@@ -190,7 +189,7 @@ struct Snake {
     }
     
     mutating func place(to position: CGPoint) {
-        head = position
+        body = [position]
     }
     
     mutating func move(to direction: Direction) {
@@ -214,9 +213,5 @@ struct Snake {
     
     mutating func grow() {
         body.append(head)
-    }
-    
-    mutating func reset() {
-        body = [CGPoint.zero]
     }
 }
