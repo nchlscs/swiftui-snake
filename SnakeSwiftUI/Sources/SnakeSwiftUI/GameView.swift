@@ -1,50 +1,42 @@
 import SwiftUI
 
-@main
-struct SnakeGameApp: App {
-    
-    var body: some Scene {
-        WindowGroup {
-            GameView(configuration: .init())
-        }
-    }
-}
+public struct GameView: View {
 
-struct Configuration {
-    var canvasSize: CGSize = .init(width: 512, height: 512)
-    var snakeSize: CGFloat = 16
-    var speed: TimeInterval = 0.1
-}
-
-struct GameView: View {
-    
     @State private var gameState = GameState.paused
     @State private var direction = Direction.down
     @State private var foodPosition = CGPoint.zero
     @State private var time = TimeInterval.zero
-    
+
     @State private var snake: Snake
     @State private var frame: CGRect
     @State private var speed: TimeInterval
     @State private var timer: Timer?
-    
-    init(configuration: Configuration) {
-        snake = .init(
+
+    public struct Configuration {
+        let canvasSize: CGSize
+        let snakeSize: CGFloat
+        let speed: TimeInterval
+    }
+
+    public init(configuration: Configuration) {
+        self.snake = .init(
             size: configuration.snakeSize
         )
-        frame = .init(
-            origin: .zero, 
+        self.frame = .init(
+            origin: .zero,
             size: configuration.canvasSize
         )
-        speed = configuration.speed
+        self.speed = configuration.speed
     }
-    
-    var body: some View {
+
+    public var body: some View {
         ZStack {
+            // Background
             Color.white
             Color.pink
                 .opacity(0.3)
                 .edgesIgnoringSafeArea(.all)
+            // Snake
             ForEach(0 ..< snake.body.count, id: \.self) { index in
                 Rectangle()
                     .fill(Color.white)
@@ -52,18 +44,32 @@ struct GameView: View {
                     .position(snake.body[index])
                     .offset(x: snake.size / 2, y: snake.size / 2)
             }
+            // Food
             Circle()
                 .fill(Color.red)
                 .frame(width: snake.size, height: snake.size)
                 .position(foodPosition)
                 .offset(x: snake.size / 2, y: snake.size / 2)
+            // Length
             Text(String(snake.body.count - 1))
                 .position(x: 16, y: 16)
                 .foregroundColor(Color.blue)
                 .font(.system(.title, design: .rounded))
+            // State
             Text(gameState.title)
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.red)
+            // Controls
+            VStack {
+                Button("") { direction = .up }
+                    .keyboardShortcut(.upArrow, modifiers: [])
+                Button("") { direction = .down }
+                    .keyboardShortcut(.downArrow, modifiers: [])
+                Button("") { direction = .left }
+                    .keyboardShortcut(.leftArrow, modifiers: [])
+                Button("") { direction = .right }
+                    .keyboardShortcut(.rightArrow, modifiers: [])
+            }
         }
         .onAppear(perform: reset)
         .onTapGesture(perform: switchState)
@@ -71,8 +77,11 @@ struct GameView: View {
         .onChange(of: time) { _ in self.run() }
         .frame(width: frame.width, height: frame.height)
     }
-    
-    private func switchState() {
+}
+
+private extension GameView {
+
+    func switchState() {
         switch gameState {
         case .paused:
             gameState = .running
@@ -83,8 +92,8 @@ struct GameView: View {
             reset()
         }
     }
-    
-    private func reset() {
+
+    func reset() {
         foodPosition = randomPosition()
         snake.place(to: randomPosition())
         let left = snake.head.x < frame.width / 2
@@ -100,13 +109,13 @@ struct GameView: View {
         }
         timer?.invalidate()
         timer = Timer.scheduledTimer(
-            withTimeInterval: speed, 
+            withTimeInterval: speed,
             repeats: true,
             block: { time += $0.timeInterval }
         )
     }
-    
-    private func randomPosition() -> CGPoint {
+
+    func randomPosition() -> CGPoint {
         (0 ..< Int(frame.maxX / snake.size))
             .map { row -> [CGPoint] in
                 (0 ..< Int(frame.maxY / snake.size))
@@ -123,8 +132,8 @@ struct GameView: View {
             }
             .randomElement() ?? .zero
     }
-    
-    private func run() {
+
+    func run() {
         guard gameState == .running else {
             return
         }
@@ -138,8 +147,8 @@ struct GameView: View {
             foodPosition = randomPosition()
         }
     }
-    
-    private func updateDirection(with gesture: DragGesture.Value) {
+
+    func updateDirection(with gesture: DragGesture.Value) {
         guard gameState == .running else {
             return
         }
@@ -150,68 +159,7 @@ struct GameView: View {
         if y > x {
             direction = (start.y < end.y) ? .down : .up
         } else {
-            direction = (start.x > end.x) ? .right : .left
+            direction = (start.x > end.x) ? .left : .right
         }
-    }
-}
-
-enum Direction: CaseIterable {
-    case up, down, left, right
-}
-
-enum GameState {
-    
-    case paused
-    case running
-    case failed
-    
-    var title: String {
-        switch self {
-        case .paused:
-            return "Tap to Play"
-        case .failed:
-            return "Game Over"
-        case .running:
-            return ""
-        }
-    }
-}
-
-struct Snake {
-    
-    let size: CGFloat
-    
-    private(set) var body = [CGPoint.zero]
-    
-    private(set) var head: CGPoint {
-        get { body[0] }
-        set { body[0] = newValue }
-    }
-    
-    mutating func place(to position: CGPoint) {
-        body = [position]
-    }
-    
-    mutating func move(to direction: Direction) {
-        var previous = head
-        switch direction {
-        case .up: 
-            head.y -= size
-        case .down: 
-            head.y += size
-        case .left: 
-            head.x += size
-        case .right: 
-            head.x -= size
-        }
-        for index in 1 ..< body.count {
-            let current = body[index]
-            body[index] = previous
-            previous = current
-        }
-    }
-    
-    mutating func grow() {
-        body.append(head)
     }
 }
