@@ -1,4 +1,4 @@
 import XCTest
-import class Foundation.Bundle
+@testable import SnakeSwiftUI
 
 final class SnakeSwiftUITests: XCTestCase {}
