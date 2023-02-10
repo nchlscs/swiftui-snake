@@ -15,7 +15,7 @@ struct SnakeGameApp: App {
 			}
 			.navigationTitle("Snake")
 			#if os(macOS)
-			.frame(width: 512, height: 512)
+				.frame(width: 512, height: 512)
 			#endif
 		}
 	}

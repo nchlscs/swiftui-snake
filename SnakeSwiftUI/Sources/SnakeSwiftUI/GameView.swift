@@ -31,11 +31,11 @@ public struct GameView: View {
 				.opacity(0.3)
 				.edgesIgnoringSafeArea(.all)
 			// Snake
-			ForEach(0 ..< snake.body.count, id: \.self) { index in
+			ForEach(snake.body) { point in
 				Rectangle()
 					.fill(Color.white)
 					.frame(width: snake.size, height: snake.size)
-					.position(snake.body[index])
+					.position(point.point)
 					.offset(x: snake.size / 2, y: snake.size / 2)
 			}
 			// Food
@@ -65,8 +65,8 @@ public struct GameView: View {
 					.keyboardShortcut(.rightArrow, modifiers: [])
 				Button("􀊄") { switchPhase() }
 					.keyboardShortcut(.space, modifiers: [])
-			}
-			.opacity(0)
+            }
+            .opacity(0)
 		}
 		.onAppear(perform: reset)
 		.onTapGesture(perform: switchPhase)
@@ -93,16 +93,16 @@ private extension GameView {
 	func reset() {
 		foodPosition = randomPosition()
 		snake.place(to: randomPosition())
-		let left = snake.head.x < frame.width / 2
-		let top = snake.head.y < frame.height / 2
+		let left = snake.head.point.x < frame.width / 2
+		let top = snake.head.point.y < frame.height / 2
 		if left && top {
-			setDirection(Bool.random() ? .down : .left)
-		} else if left && !top {
-			setDirection(Bool.random() ? .up : .left)
-		} else if !left && top {
 			setDirection(Bool.random() ? .down : .right)
-		} else if !left && !top {
+		} else if left && !top {
 			setDirection(Bool.random() ? .up : .right)
+		} else if !left && top {
+			setDirection(Bool.random() ? .down : .left)
+		} else if !left && !top {
+			setDirection(Bool.random() ? .up : .left)
 		}
 		timer?.invalidate()
 		timer = Timer.scheduledTimer(
@@ -113,33 +113,35 @@ private extension GameView {
 	}
 
 	func randomPosition() -> CGPoint {
-		(0 ..< Int(frame.maxX / snake.size))
-			.map { row -> [CGPoint] in
-				(0 ..< Int(frame.maxY / snake.size))
-					.map { column -> CGPoint in
-						CGPoint(
-							x: snake.size * CGFloat(row),
-							y: snake.size * CGFloat(column)
-						)
-					}
+		var points = [CGPoint]()
+		let ignorePoints = snake.body
+			.reduce(into: [foodPosition]) { $0.append($1.point) }
+
+		for column in 0 ..< Int(frame.maxX / snake.size) {
+			for row in 0 ..< Int(frame.maxY / snake.size) {
+				let point = CGPoint(
+					x: snake.size * CGFloat(column),
+					y: snake.size * CGFloat(row)
+				)
+				if !ignorePoints.contains(point) {
+					points.append(point)
+				}
 			}
-			.flatMap { $0 }
-			.filter {
-				!snake.body.contains($0) && $0 != foodPosition
-			}
-			.randomElement() ?? .zero
+		}
+
+		return points.randomElement() ?? .zero
 	}
 
 	func run() {
 		guard phase == .running else {
 			return
 		}
-		guard frame.contains(snake.head) else {
+		guard frame.contains(snake.head.point) else {
 			phase = .failed
 			return
 		}
 		snake.move(to: direction)
-		if snake.head == foodPosition {
+		if snake.head.point == foodPosition {
 			snake.grow()
 			foodPosition = randomPosition()
 		}
