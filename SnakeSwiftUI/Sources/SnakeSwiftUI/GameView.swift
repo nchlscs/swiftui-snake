@@ -65,9 +65,10 @@ public struct GameView: View {
 					.keyboardShortcut(.rightArrow, modifiers: [])
 				Button("􀊄") { switchPhase() }
 					.keyboardShortcut(.space, modifiers: [])
-            }
-            .opacity(0)
+			}
+			.opacity(0)
 		}
+		.animation(nil)
 		.onAppear(perform: reset)
 		.onTapGesture(perform: switchPhase)
 		.gesture(DragGesture().onEnded(updateDirection))
