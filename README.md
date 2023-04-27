@@ -2,7 +2,7 @@
 
 A classic snake game written in SwiftUI.
 
-![Preview](https://raw.githubusercontent.com/nchlscs/snake-swiftui/main/SnakeSwiftUI/Preview.png)
+![Preview](https://raw.githubusercontent.com/nchlscs/swiftui-snake/main/SwiftUISnake/Preview.png)
 
 ## Installation
 

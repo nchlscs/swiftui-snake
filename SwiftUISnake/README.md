@@ -1,19 +1,19 @@
-# SnakeSwiftUI
+# SwiftUI Snake
 
-A classic snake game written in SwiftUI
+A classic snake game written in SwiftUI.
 
-![Preview](https://raw.githubusercontent.com/nchlscs/snake-swiftui/main/SnakeSwiftUI/Preview.png)
+![Preview](https://raw.githubusercontent.com/nchlscs/swiftui-snake/main/SwiftUISnake/Preview.png)
 
 ## Installation
 
 ### Library
 
-The repository includes a Swift library which can be added separately and embedded in SwiftUI views.
+The repository includes a Swift library for use in SwiftUI views.
 
 ```swift
-.package(url: "https://github.com/nchlscs/snake-swiftui", from: "0.1.0")
+.package(url: "https://github.com/nchlscs/swiftui-snake", from: "0.1.0")
 ```
 
 ### Demo project
 
-The repository also includes an Xcode project with universal macOS and iOS app.
+The repository also includes a universal macOS and iOS project.
