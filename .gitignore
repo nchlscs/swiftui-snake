@@ -1,7 +1,12 @@
 .DS_Store
 /.build
+xcuserdata/
+*.xcuserstate
 /Packages
 /*.xcodeproj
 .swiftpm
 .vscode
 .*.sw?
+*.profraw
+DerivedData/
+.idea

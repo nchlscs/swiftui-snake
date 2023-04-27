@@ -1,21 +1,17 @@
 --swiftversion 5.7
---indent tab
 --maxwidth 80
-
---allman false
---self init-only
---importgrouping testable-last
---commas inline
---wraparguments before-first
+--indent 2
 --indentstrings true
 --xcodeindentation true
+--self init-only
+--importgrouping testable-last
+--wraparguments before-first
 
 --enable acronyms
---enable isEmpty
 --enable wrapConditionalBodies
+--enable blankLineAfterImports
 
 --disable blankLinesAtStartOfScope
---disable andOperator
 --disable redundantRawValues
 --disable unusedArguments
 --disable wrapMultilineStatementBraces

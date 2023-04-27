@@ -7,74 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7572F6D72986C1B90051010B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7572F6D62986C1B90051010B /* App.swift */; };
-		7572F6DB2986C1BA0051010B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7572F6DA2986C1BA0051010B /* Assets.xcassets */; };
-		7572F6DF2986C1BA0051010B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7572F6DE2986C1BA0051010B /* Preview Assets.xcassets */; };
-		7572F6E82986C65C0051010B /* SnakeSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7572F6E72986C65C0051010B /* SnakeSwiftUI */; };
+		759B0A8329FA62AC00AF43BF /* SnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B0A8229FA62AC00AF43BF /* SnakeApp.swift */; };
+		759B0A8729FA62AC00AF43BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759B0A8629FA62AC00AF43BF /* Assets.xcassets */; };
+		759B0A8B29FA62AC00AF43BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759B0A8A29FA62AC00AF43BF /* Preview Assets.xcassets */; };
+		759B0A9429FA636C00AF43BF /* SwiftUISnake in Frameworks */ = {isa = PBXBuildFile; productRef = 759B0A9329FA636C00AF43BF /* SwiftUISnake */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7572F6D32986C1B90051010B /* SnakeSwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeSwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7572F6D62986C1B90051010B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		7572F6DA2986C1BA0051010B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7572F6DC2986C1BA0051010B /* SnakeSwiftUIApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnakeSwiftUIApp.entitlements; sourceTree = "<group>"; };
-		7572F6DE2986C1BA0051010B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7572F6E52986C2490051010B /* SnakeSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SnakeSwiftUI; path = ../SnakeSwiftUI; sourceTree = "<group>"; };
+		759B0A7F29FA62AC00AF43BF /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		759B0A8229FA62AC00AF43BF /* SnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeApp.swift; sourceTree = "<group>"; };
+		759B0A8629FA62AC00AF43BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		759B0A8829FA62AC00AF43BF /* Snake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snake.entitlements; sourceTree = "<group>"; };
+		759B0A8A29FA62AC00AF43BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		759B0A9129FA632B00AF43BF /* SwiftUISnake */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftUISnake; path = ../SwiftUISnake; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7572F6D02986C1B90051010B /* Frameworks */ = {
+		759B0A7C29FA62AC00AF43BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7572F6E82986C65C0051010B /* SnakeSwiftUI in Frameworks */,
+				759B0A9429FA636C00AF43BF /* SwiftUISnake in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7572F6CA2986C1B90051010B = {
+		759B0A7629FA62AC00AF43BF = {
 			isa = PBXGroup;
 			children = (
-				7572F6E52986C2490051010B /* SnakeSwiftUI */,
-				7572F6D52986C1B90051010B /* SnakeSwiftUIApp */,
-				7572F6D42986C1B90051010B /* Products */,
-				7572F6E62986C2600051010B /* Frameworks */,
+				759B0A9129FA632B00AF43BF /* SwiftUISnake */,
+				759B0A8129FA62AC00AF43BF /* Snake */,
+				759B0A8029FA62AC00AF43BF /* Products */,
+				759B0A9229FA636900AF43BF /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
 			tabWidth = 2;
-			usesTabs = 1;
+			usesTabs = 0;
 		};
-		7572F6D42986C1B90051010B /* Products */ = {
+		759B0A8029FA62AC00AF43BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7572F6D32986C1B90051010B /* SnakeSwiftUIApp.app */,
+				759B0A7F29FA62AC00AF43BF /* Snake.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7572F6D52986C1B90051010B /* SnakeSwiftUIApp */ = {
+		759B0A8129FA62AC00AF43BF /* Snake */ = {
 			isa = PBXGroup;
 			children = (
-				7572F6D62986C1B90051010B /* App.swift */,
-				7572F6DA2986C1BA0051010B /* Assets.xcassets */,
-				7572F6DC2986C1BA0051010B /* SnakeSwiftUIApp.entitlements */,
-				7572F6DD2986C1BA0051010B /* Preview Content */,
+				759B0A8229FA62AC00AF43BF /* SnakeApp.swift */,
+				759B0A8629FA62AC00AF43BF /* Assets.xcassets */,
+				759B0A8829FA62AC00AF43BF /* Snake.entitlements */,
+				759B0A8929FA62AC00AF43BF /* Preview Content */,
 			);
-			path = SnakeSwiftUIApp;
+			path = Snake;
 			sourceTree = "<group>";
 		};
-		7572F6DD2986C1BA0051010B /* Preview Content */ = {
+		759B0A8929FA62AC00AF43BF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				7572F6DE2986C1BA0051010B /* Preview Assets.xcassets */,
+				759B0A8A29FA62AC00AF43BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7572F6E62986C2600051010B /* Frameworks */ = {
+		759B0A9229FA636900AF43BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -84,42 +84,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7572F6D22986C1B90051010B /* SnakeSwiftUIApp */ = {
+		759B0A7E29FA62AC00AF43BF /* Snake */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7572F6E22986C1BA0051010B /* Build configuration list for PBXNativeTarget "SnakeSwiftUIApp" */;
+			buildConfigurationList = 759B0A8E29FA62AC00AF43BF /* Build configuration list for PBXNativeTarget "Snake" */;
 			buildPhases = (
-				7572F6CF2986C1B90051010B /* Sources */,
-				7572F6D02986C1B90051010B /* Frameworks */,
-				7572F6D12986C1B90051010B /* Resources */,
+				759B0A7B29FA62AC00AF43BF /* Sources */,
+				759B0A7C29FA62AC00AF43BF /* Frameworks */,
+				759B0A7D29FA62AC00AF43BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SnakeSwiftUIApp;
+			name = Snake;
 			packageProductDependencies = (
-				7572F6E72986C65C0051010B /* SnakeSwiftUI */,
+				759B0A9329FA636C00AF43BF /* SwiftUISnake */,
 			);
-			productName = SnakeSwiftUIApp;
-			productReference = 7572F6D32986C1B90051010B /* SnakeSwiftUIApp.app */;
+			productName = Snake;
+			productReference = 759B0A7F29FA62AC00AF43BF /* Snake.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7572F6CB2986C1B90051010B /* Project object */ = {
+		759B0A7729FA62AC00AF43BF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					7572F6D22986C1B90051010B = {
+					759B0A7E29FA62AC00AF43BF = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 7572F6CE2986C1B90051010B /* Build configuration list for PBXProject "SnakeSwiftUIApp" */;
+			buildConfigurationList = 759B0A7A29FA62AC00AF43BF /* Build configuration list for PBXProject "Snake" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,41 +127,41 @@
 				en,
 				Base,
 			);
-			mainGroup = 7572F6CA2986C1B90051010B;
-			productRefGroup = 7572F6D42986C1B90051010B /* Products */;
+			mainGroup = 759B0A7629FA62AC00AF43BF;
+			productRefGroup = 759B0A8029FA62AC00AF43BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7572F6D22986C1B90051010B /* SnakeSwiftUIApp */,
+				759B0A7E29FA62AC00AF43BF /* Snake */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7572F6D12986C1B90051010B /* Resources */ = {
+		759B0A7D29FA62AC00AF43BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7572F6DF2986C1BA0051010B /* Preview Assets.xcassets in Resources */,
-				7572F6DB2986C1BA0051010B /* Assets.xcassets in Resources */,
+				759B0A8B29FA62AC00AF43BF /* Preview Assets.xcassets in Resources */,
+				759B0A8729FA62AC00AF43BF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7572F6CF2986C1B90051010B /* Sources */ = {
+		759B0A7B29FA62AC00AF43BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7572F6D72986C1B90051010B /* App.swift in Sources */,
+				759B0A8329FA62AC00AF43BF /* SnakeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7572F6E02986C1BA0051010B /* Debug */ = {
+		759B0A8C29FA62AC00AF43BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -219,7 +219,7 @@
 			};
 			name = Debug;
 		};
-		7572F6E12986C1BA0051010B /* Release */ = {
+		759B0A8D29FA62AC00AF43BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,21 +270,17 @@
 			};
 			name = Release;
 		};
-		7572F6E32986C1BA0051010B /* Debug */ = {
+		759B0A8F29FA62AC00AF43BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = SnakeSwiftUIApp/SnakeSwiftUIApp.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = Snake/Snake.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SnakeSwiftUIApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Snake/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Snake;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -295,14 +291,13 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nchlscs.SnakeSwiftUIApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nchlscs.Snake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -311,21 +306,17 @@
 			};
 			name = Debug;
 		};
-		7572F6E42986C1BA0051010B /* Release */ = {
+		759B0A9029FA62AC00AF43BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = SnakeSwiftUIApp/SnakeSwiftUIApp.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = Snake/Snake.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SnakeSwiftUIApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Snake/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Snake;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -336,14 +327,13 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nchlscs.SnakeSwiftUIApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nchlscs.Snake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -355,20 +345,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7572F6CE2986C1B90051010B /* Build configuration list for PBXProject "SnakeSwiftUIApp" */ = {
+		759B0A7A29FA62AC00AF43BF /* Build configuration list for PBXProject "Snake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7572F6E02986C1BA0051010B /* Debug */,
-				7572F6E12986C1BA0051010B /* Release */,
+				759B0A8C29FA62AC00AF43BF /* Debug */,
+				759B0A8D29FA62AC00AF43BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7572F6E22986C1BA0051010B /* Build configuration list for PBXNativeTarget "SnakeSwiftUIApp" */ = {
+		759B0A8E29FA62AC00AF43BF /* Build configuration list for PBXNativeTarget "Snake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7572F6E32986C1BA0051010B /* Debug */,
-				7572F6E42986C1BA0051010B /* Release */,
+				759B0A8F29FA62AC00AF43BF /* Debug */,
+				759B0A9029FA62AC00AF43BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -376,11 +366,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7572F6E72986C65C0051010B /* SnakeSwiftUI */ = {
+		759B0A9329FA636C00AF43BF /* SwiftUISnake */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SnakeSwiftUI;
+			productName = SwiftUISnake;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7572F6CB2986C1B90051010B /* Project object */;
+	rootObject = 759B0A7729FA62AC00AF43BF /* Project object */;
 }
